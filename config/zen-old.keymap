@@ -58,7 +58,7 @@
             bindings = <&mo>, <&bstab>;
         };
     };
-/ {
+    
         keymap {
                 compatible = "zmk,keymap";
 
