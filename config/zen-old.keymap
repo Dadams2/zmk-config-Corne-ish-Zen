@@ -15,7 +15,8 @@
 };
 
 / {
-       behaviors {
+
+  behaviors {
         am: alpha_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "ALPHA_MT";
@@ -52,7 +53,7 @@
             bindings = <&mo>, <&bstab>;
         };
     };
- 
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -65,8 +66,7 @@
 //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
                         bindings = <
    &kp ESC  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-
-&kp CTRL   &am LGUI A   &am LALT S    &am LSHIFT D    &as LCT F   &kp G    &kp H   &as RCTRL J  &am RSHFT K    &am RALT L  &am RGUI SEMI  &kp SQT
+   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LGUI
                 &mo 1 &mt LSHFT ESC &mt LCTRL RET   &mt RCTRL SPACE &mt RSHFT TAB &mo 2 &reset
                         >;
@@ -90,13 +90,13 @@
                         label = "SYMBOL";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |  `  |  \  |  +  |  -  |  (  |   |  )  |  =  |  [  |  ]  |  \  |  `   |
-// | ~    | "|" |     |     |     |  {  |   |  }  |  +  |  {  |  }  | "|" |  ~   |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp GRAVE &kp BSLH   &kp PLUS   &kp MINUS  &kp LBKT      &kp RBKT &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp TILDE &kp PIPE   &trans &trans   &trans   &kp LBRC      &kp RBRC &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
                     	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };
