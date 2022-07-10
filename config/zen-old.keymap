@@ -57,19 +57,18 @@
 
         keymap {
                 compatible = "zmk,keymap";
-
                 default_layer {
                         label = "QWERTY";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | LGUI  |
 //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
                         bindings = <
    &kp ESC  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &am LGUI A &am LALT S &as LSHIFT D &am LCTRL F &kp G   &kp H &am LCTRL J  &as LSHIFT K  &am LALT L   &am LGUI SEMI &kp SQT
+   &kp LCTRL &am LGUI A &am LALT S &as LSHIFT D &am LCTRL F &kp G   &kp H &am LCTRL J  &as LSHIFT K  &am LALT L &am LGUI SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LGUI
-                &mo 1 &mt LSHFT ESC &mt LCTRL RET   &mt RCTRL SPACE &mt RSHFT TAB &mo 2 &reset
+                &mo 1 &mt LSHFT ESC &mt LCTRL RET   &mt RCTRL SPACE &mt RSHFT TAB &mo 2 
                         >;
                 };
                 lower_layer {
@@ -91,7 +90,7 @@
                         label = "SYMBOL";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |  `  |  \  |  +  |  -  |  (  |   |  )  |  =  |  [  |  ]  |  \  |  `   |
+// | CTRL |  \  |  \  |  +  |  -  |  (  |   |  )  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |  ~  | "|" |     |     |  {  |   |  }  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
