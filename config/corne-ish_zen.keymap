@@ -1,7 +1,7 @@
 
 #define THREE_THUMBS
 
-#include "3x6.keymap"
+#include "zen-old.keymap"
 
 / {
     chosen {

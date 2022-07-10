@@ -24,12 +24,12 @@
 
 &mt {
     flavor = "hold-preferred";
-    tapping-term-ms = <150>;
+    tapping-term-ms = <190>;
 };
 
 &lt {
     flavor = "balanced";
-    tapping-term-ms = <150>;
+    tapping-term-ms = <190>;
 };
 
 &caps_word {
@@ -105,11 +105,11 @@
             label = "DEF";
             bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P
+ &kp TAB    &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P  &kp ESC
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &am LCTRL A   &am LGUI S    &am LALT D    &as LSHFT F   &kp G             &kp H         &as RSHFT J   &am RALT K    &am RGUI L    &am RCTRL SQT
+&kp CTRL     &am LGUI A   &am LALT S    &am LSHIFT D    &as LCT F   &kp G             &kp H         &as RCTRL J   &am RSHFT K    &am RALT L    &am RGUI SEMI  &kpSQT
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH
+&kp SHFT     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH &kp PIPE
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 #ifdef THREE_THUMBS
                                  &mt LGUI TAB  &mt LCTRL ESC &lt_bspc NAV 0    &lt SYM SPACE &mt RSHFT RET &mt RALT DEL
@@ -143,11 +143,11 @@
             label = "GME";
             bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &kp TAB       &kp Q         &kp W         &kp E         &kp R             &kp Y         &kp U         &kp I         &kp O         &kp P
+     &kp TAB       &kp Q         &kp W         &kp E         &kp R  &kp T           &kp Y         &kp U         &kp I         &kp O         &kp P &kp ESC
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp ESC       &kp A         &kp S         &kp D         &kp F             &kp H         &kp J         &kp K         &kp L         &tog GME
+     &kp LCTRL       &kp A         &kp S         &kp D         &kp F   &kp g          &kp H         &kp J         &kp K         &kp L    &kp SEMI     &tog GME
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp LSHFT     &kp Z         &kp X         &kp C         &kp V             &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH
+     &kp LSHFT     &kp Z         &kp X         &kp C         &kp V   &kp B          &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH &kp GUI
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 #ifdef THREE_THUMBS
                                  &kp TAB       &kp LCTRL     &kp SPACE         &kp LALT      &kp RET       &mt RALT DEL
