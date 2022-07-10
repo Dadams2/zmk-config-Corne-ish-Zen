@@ -2,9 +2,3 @@
 #define THREE_THUMBS
 
 #include "zen-old.keymap"
-
-/ {
-    chosen {
-        zmk,matrix_transform = &six_column_transform;
-    };
-};
