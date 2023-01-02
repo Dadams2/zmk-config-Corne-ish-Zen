@@ -1,4 +1,1 @@
-
-#define THREE_THUMBS
-
-#include "zen-old.keymap"
+#include "zen-new.keymap"
