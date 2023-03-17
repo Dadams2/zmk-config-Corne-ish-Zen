@@ -17,13 +17,6 @@
 
 #define THREE_THUMBS
 
-// Desktop and tab navigation shortcuts
-#define D_LT   LC(LG(LEFT))
-#define D_RT   LC(LG(RIGHT))
-#define TAB_RT LC(TAB)
-#define TAB_LT LC(LS(TAB))
-
-#include "combos.dtsi"
 
 &mt {
     flavor = "hold-preferred";
@@ -33,10 +26,6 @@
 &lt {
     flavor = "balanced";
     tapping-term-ms = <150>;
-};
-
-&caps_word {
-    continue-list = <UNDERSCORE MINUS BSPC DEL N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>;
 };
 
 / {
@@ -107,12 +96,12 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &kp ESC       &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp BSPC
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp LSHIFT     &am LGUI A   &am LALT S    &am LCTRL D  &as LSHIFT F   &kp G             &kp H         &as RSHIFT J  &am RCTRL K    &am RALT L   &am RGUI SQT  &kp SQT
+     &kp LSHIFT     &am LGUI A   &am LALT S    &am LSHIFT D  &am LCTRL F   &kp G             &kp H         &am RCTRL J  &am RSHIFT K    &am RALT L   &am RGUI SEMI   &kp SQT
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp TILDE     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH     &kp PIPE
 // ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 #ifdef THREE_THUMBS
-                                              &mt LGUI TAB  &mt LCTRL ESC  &lt NAV RET      &lt SYM SPACE &mt RSHFT TAB &mt RALT DEL
+                                              &lt LGUI FUN  &mt LSHIFT ESC  &lt NAV RET      &lt SYM SPACE &mt RSHFT TAB &mt RALT DEL
 #else
                                                             &mt LCTRL ESC  &lt NAV RET      &lt SYM SPACE &mt RSHFT TAB
 #endif
@@ -120,42 +109,58 @@
             >;
         };
 
-        symbol_layer {
-            label = "SYM";
+        num_layer {
+            label = "NUM";
             bindings = <
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT         &kp BSLH      &kp N7        &kp N8        &kp N9        &kp COMMA
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp PLUS      &kp EQUAL     &kp UNDER     &kp MINUS     &kp CARET         &kp N0        &kp N4        &kp N5        &kp N6        &kp DOT
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &none         &none         &inv_qm       &kp STAR      &kp AMPS          &kp SEMI      &kp N1        &kp N2        &kp N3        &kp SLASH
-// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+     &kp 1          &kp 2        &kp 3         &kp 3         &kp 4         &kp 5             &kp 6         &kp 7         &kp 8         &kp 9         &kp 0         &kp BSPC
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp LSHIFT     &kp LEFT     &kp UP        &am DOWN      &as RIGHT     &kp LPAR          &kp RPAR      &kp 4         &kp 5         &kp 6         &am RGUI SEMI   &kp SQT
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp TILDE     &kp Z         &kp LBRC      &kp RBRC         &kp V         &kp LBKT          &kp RBKT   &kp 1         &kp 2         &kp 3         &kp SLASH     &kp PIPE
+// ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 #ifdef THREE_THUMBS
-                                 &kp LGUI      &kp SPACE     &trans            &trans        &kp LSHFT     &kp RALT
+                                              &mt LGUI TAB  &mt LCTRL ESC  &lt NAV RET      &am RSHFT SPACE &mt RSHFT TAB &mt RALT DEL
 #else
-                                               &kp SPACE     &trans            &trans        &kp LSHFT
+                                                            &mt LCTRL ESC  &lt NAV RET      &lt SYM SPACE &mt RSHFT TAB
 #endif
-//                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+//                                                         ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
             >;
         };
-
-
-        nav_layer {
-            label = "NAV";
+        fun_layer {
+            label = "FUN";
             bindings = <
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &kp LA(F4)    &kp TAB_LT    &kp TAB_RT    &kp LC(F4)    &kp C_VOL_UP      &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &none
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp LEFT       &kp UP       &kp DOWN     &kp RIGHT     &kp C_VOL_DN      &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp C_AL_CALC
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &none         &none         &none         &kp LS(INS)   &kp C_PP          &kp INS       &kp DEL       &kp C_PREV    &kp C_NEXT    &none
-// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+     &kp F1          &kp F2        &kp F3         &kp F3         &kp F4         &kp F5       &kp F6         &kp F7         &kp F8         &kp F9       &kp F10     &kp BSPC
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2   &bt BT_SEL 3 &bt BT_SEL 4         &kp HOME   &kp PG_DN      &kp PG_UP     &kp END       &am RGUI SEMI   &kp SQT
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp TILDE     &kp Z         &kp LBRC      &kp RBRC         &kp V         &kp LBKT          &kp RBKT   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PREV    &kp C_NEXT     &kp PIPE
+// ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 #ifdef THREE_THUMBS
-                                 &kp LGUI      &kp LCTRL     &trans            &trans        &kp LSHFT     &kp RALT
+                                              &mt LGUI TAB  &mt LCTRL ESC  &lt NAV RET      &am RSHFT SPACE &mt RSHFT TAB &mt RALT DEL
 #else
-                                               &kp LCTRL     &trans            &trans        &kp LSHFT
+                                                            &mt LCTRL ESC  &lt NAV RET      &lt SYM SPACE &mt RSHFT TAB
 #endif
-//                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+//                                                         ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+            >;
+        };
+        sym_layer {
+            label = "SYM";
+            bindings = <
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+     &kp TAB       &kp EXCL       &kp AT        &kp HASH      &kp DLL    &kp PRCNT         &kp CARET       &kp AMPS   &kp KP_MULTIPLY  &kp LPAR    &kp RPAR        &kp BSPC
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp GRAVE     &kp BSLH     &kp LBKT        &kp RBKT        &kp EQUAL     &kp MINUS       &kp MINUS     &kp EQUAL       &kp LBKT    &kp RBKT      &kp BSLH       &kp GRAVE
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp TILDE     &kp PIPE         &kp LBRC   &kp RBRC         &kp PLUS      &kp UNDER      &kp UNDER      &kp PLUS       &kp LBRC      &kp RBRC      &kp PIPE      &kp TILDE
+// ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+#ifdef THREE_THUMBS
+                                              &mt LGUI TAB  &mt LCTRL ESC  &lt NAV RET      &am RSHFT SPACE &mt RSHFT TAB &mt RALT DEL
+#else
+                                                            &mt LCTRL ESC  &lt NAV RET      &lt SYM SPACE &mt RSHFT TAB
+#endif
+//                                                         ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
             >;
         };
     };
